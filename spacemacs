@@ -244,6 +244,7 @@ layers configuration. You are free to put any user code."
   (define-key evil-normal-state-map (kbd "C-n") 'evil-search-highlight-persist-remove-all) ; Bind C-n to :nohl
   (setq-default projectile-project-compilation-command "make -j4")
   (setq-default projectile-project-compilation-dir "build")
+  (setq-default vc-follow-symlinks t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

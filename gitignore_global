@@ -1,0 +1,9 @@
+# CMake build directories
+build
+*_build
+
+# Vim swap files
+.*.swp
+
+# YCM extra config
+.ycm_extra_conf.py*

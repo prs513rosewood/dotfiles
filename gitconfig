@@ -1,0 +1,7 @@
+[user]
+	name = "Lucas Frérot"
+	email = lucas.frerot@epfl.ch
+[push]
+	default = simple
+[core]
+	excludesfile = ~/.gitignore_global

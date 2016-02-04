@@ -1,0 +1,5 @@
+# .gitignore
+
+vim/bundle/*
+vim/tags
+vim/.netrwhist

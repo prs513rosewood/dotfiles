@@ -1,3 +1,48 @@
+" - Vundle configuration -----------------------------------------------------------------
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" user plugins
+Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-scripts/Conque-GDB'
+Plugin 'Valloric/YouCompleteMe.git'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'jamessan/vim-gnupg'
+Plugin 'vim-airline/vim-airline'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+" ----------------------------------------------------------------------------------------
+
 " Turn off the lights...
 set background=dark
 
@@ -97,8 +142,6 @@ nohl
 
 " Spell language
 set spelllang=en_us,fr
-" Plugin loading
-execute pathogen#infect()
 
 " Snippet author
 let g:snips_author = "Lucas Frérot"

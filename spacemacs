@@ -29,7 +29,7 @@ values."
      xkcd
      spotify
      syntax-checking
-     ;; vim-powerline
+     vim-powerline
      version-control
      ;; markdown
      org

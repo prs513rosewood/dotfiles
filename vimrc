@@ -24,6 +24,7 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 
 " All of your Plugins must be added before the following line
@@ -179,9 +180,16 @@ autocmd BufRead *.tex,*.txt setlocal linebreak
 
 " vim-airline
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#whitespace#enabled = 0
 
 " YouCompleteMe
 let g:ycm_collect_identifiers_from_tags_file = 1
 let g:ycm_extra_conf_globlist = ["~/Documents/akantu/.ycm_extra_conf.py"]
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_filetype_blacklist = {'text':1, 'tex':1}
+
+" CtrlP
+let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_by_filename = 1
+let g:ctrlp_match_window = 'bottom,order:ttb'
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/doxygen/*        " Linux/MacOSX

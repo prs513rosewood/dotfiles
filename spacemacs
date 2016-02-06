@@ -242,13 +242,20 @@ in `dotspacemacs/user-config'."
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
-  (define-key evil-normal-state-map (kbd "C-n") 'evil-search-highlight-persist-remove-all) ; Bind C-n to :nohl
+  ;; Bind C-n to :nohl
+  (define-key evil-normal-state-map (kbd "C-n") 'evil-search-highlight-persist-remove-all)
+
+  ;; Compilation setup for projectile
   (setq-default projectile-project-compilation-command "make -j4")
   (setq-default projectile-project-compilation-dir "build")
+
+  ;; Tell emacs to always follow symbolic links
   (setq-default vc-follow-symlinks t)
+
+  ;; Org options
   (setq org-agenda-files '("~/Dropbox/orgs"))
-  (setq-default org-directory "~/Dropbox/orgs")
-  (setq-default org-mobile-inbox-for-pull "~/Dropbox/orgs")
+  (setq org-directory "~/Dropbox/orgs")
+  (setq org-mobile-inbox-for-pull "~/Dropbox/orgs")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

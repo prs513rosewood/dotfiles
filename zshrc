@@ -14,7 +14,7 @@ fi
 DEFAULT_USER=$(whoami)
 
 # Oh-My-Zsh plugins (look at $ZSH/plugins)
-plugins=(git chucknorris ubuntu common-aliases)
+plugins=(git nyan chucknorris ubuntu common-aliases)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -24,6 +24,7 @@ export LC_ALL=en_US.UTF-8
 # Extra aliases
 alias gpg='gpg2'
 alias ipnote='cd ~/Documents/python/notebooks/; ipython notebook; cd -'
+alias shrc='source ~/.zshrc'
 
 # Activate bash-style completion
 autoload -U +X compinit && compinit

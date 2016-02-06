@@ -33,6 +33,7 @@ values."
      version-control
      ;; markdown
      org
+     games
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -245,6 +246,9 @@ layers configuration. You are free to put any user code."
   (setq-default projectile-project-compilation-command "make -j4")
   (setq-default projectile-project-compilation-dir "build")
   (setq-default vc-follow-symlinks t)
+  (setq org-agenda-files '("~/Dropbox/orgs"))
+  (setq-default org-directory "~/Dropbox/orgs")
+  (setq-default org-mobile-inbox-for-pull "~/Dropbox/orgs")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

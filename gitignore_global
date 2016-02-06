@@ -1,6 +1,5 @@
 # CMake build directories
-build
-*_build
+build*
 
 # Vim swap files
 .*.swp

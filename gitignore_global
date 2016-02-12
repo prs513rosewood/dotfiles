@@ -6,3 +6,6 @@ build*
 
 # YCM extra config
 .ycm_extra_conf.py*
+
+# Dir-local variables
+.dir-locals.el

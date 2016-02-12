@@ -31,19 +31,14 @@ values."
      syntax-checking
      vim-powerline
      version-control
-     ;; markdown
      org
      games
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
-     ;; spell-checking
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(cmake-ide)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -228,7 +223,7 @@ values."
    ;; `trailing' to delete only the whitespace at end of lines, `changed'to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup nil
+   dotspacemacs-whitespace-cleanup 'trailing
    ))
 
 (defun dotspacemacs/user-init ()
@@ -245,9 +240,7 @@ layers configuration. You are free to put any user code."
   ;; Bind C-n to :nohl
   (define-key evil-normal-state-map (kbd "C-n") 'evil-search-highlight-persist-remove-all)
 
-  ;; Compilation setup for projectile
-  (setq-default projectile-project-compilation-command "make -j4")
-  (setq-default projectile-project-compilation-dir "build")
+
 
   ;; Tell emacs to always follow symbolic links
   (setq-default vc-follow-symlinks t)
@@ -256,7 +249,24 @@ layers configuration. You are free to put any user code."
   (setq org-agenda-files '("~/Dropbox/orgs"))
   (setq org-directory "~/Dropbox/orgs")
   (setq org-mobile-inbox-for-pull "~/Dropbox/orgs")
-  )
+
+  ;; (require 'rtags)
+  (cmake-ide-setup)
+
+  ;; C++ bindings
+  (spacemacs/set-leader-keys-for-major-mode 'c++-mode "c" 'cmake-ide-compile)
+  (spacemacs/set-leader-keys-for-major-mode 'c++-mode "a" 'projectile-find-other-file)
+  (spacemacs/set-leader-keys-for-major-mode 'c++-mode "w" (lambda () (interactive)
+                                                            (evil-window-vsplit)
+                                                            (projectile-find-other-file))
+    )
+
+  ;; Adding safe local variables
+  (add-to-list 'safe-local-variable-values '(cmake-ide-dir . "/home/frerot/Documents/python/contact/fem/displacement_verification/build"))
+  (add-to-list 'safe-local-variable-values '(cmake-ide-dir . "/home/frerot/Documents/akantu/build"))
+  (add-to-list 'safe-local-variable-values '(cmake-ide-compile-command . "make -C /home/frerot/Documents/python/contact/fem/displacement_verification/build"))
+  (add-to-list 'safe-local-variable-values '(cmake-ide-compile-command . "make -j4 -C /home/frerot/Documents/akantu/build akantu"))
+)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.

@@ -9,3 +9,6 @@ build*
 
 # Dir-local variables
 .dir-locals.el
+
+# Projectile config files
+.projectile

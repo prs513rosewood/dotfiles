@@ -240,7 +240,7 @@ layers configuration. You are free to put any user code."
   ;; Bind C-n to :nohl
   (define-key evil-normal-state-map (kbd "C-n") 'evil-search-highlight-persist-remove-all)
 
-
+  (define-key evil-normal-state-map (kbd "<f12>") 'spacemacs/cycle-spacemacs-theme)
 
   ;; Tell emacs to always follow symbolic links
   (setq-default vc-follow-symlinks t)

@@ -26,3 +26,8 @@ export PYTHONPATH=$PYTHONPATH:$HOME/Documents/blackdynamite/python
 
 # Contact path
 export CONTACT=$HOME/Documents/python/contact
+
+# Add Tamaas to various paths
+export TAMAAS=$HOME/Documents/tamaas
+export PYTHONPATH=$PYTHONPATH:$TAMAAS/build/python
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH/build/src

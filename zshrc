@@ -23,8 +23,9 @@ export LC_ALL=en_US.UTF-8
 
 # Extra aliases
 alias gpg='gpg2'
-alias ipnote='cd ~/Documents/python/notebooks/; ipython notebook; cd -'
+alias ipnote='cd ~/Documents/python/notebooks/; jupyter notebook; cd -'
 alias shrc='source ~/.zshrc'
+alias open='gnome-open'
 
 # Activate bash-style completion
 autoload -U +X compinit && compinit

@@ -26,6 +26,7 @@ values."
             c-c++-enable-clang-support t)
      python
      ipython-notebook
+     latex
      xkcd
      spotify
      syntax-checking
@@ -245,6 +246,16 @@ layers configuration. You are free to put any user code."
   ;; Tell emacs to always follow symbolic links
   (setq-default vc-follow-symlinks t)
 
+  ;; Add cpp-hh couple to projectile-find-other-file
+  (with-eval-after-load "projectile"
+    (add-to-list 'projectile-other-file-alist '("cpp" "hh"))
+    (add-to-list 'projectile-other-file-alist '("hh" "cpp"))
+    )
+
+  ;; Ein commands
+  (spacemacs/set-leader-keys-for-major-mode
+    'ein:notebook-multilang-mode "m" 'spacemacs/ipython-notebook-micro-state)
+
   ;; Org options
   (setq org-agenda-files '("~/Dropbox/orgs"))
   (setq org-directory "~/Dropbox/orgs")
@@ -254,7 +265,7 @@ layers configuration. You are free to put any user code."
   (cmake-ide-setup)
 
   ;; C++ bindings
-  (spacemacs/set-leader-keys-for-major-mode 'c++-mode "c" 'cmake-ide-compile)
+  (spacemacs/set-leader-keys-for-major-mode 'c++-mode "c" 'compile)
   (spacemacs/set-leader-keys-for-major-mode 'c++-mode "a" 'projectile-find-other-file)
   (spacemacs/set-leader-keys-for-major-mode 'c++-mode "w" (lambda () (interactive)
                                                             (evil-window-vsplit)
@@ -264,9 +275,10 @@ layers configuration. You are free to put any user code."
   ;; Adding safe local variables
   (add-to-list 'safe-local-variable-values '(cmake-ide-dir . "/home/frerot/Documents/python/contact/fem/displacement_verification/build"))
   (add-to-list 'safe-local-variable-values '(cmake-ide-dir . "/home/frerot/Documents/akantu/build"))
-  (add-to-list 'safe-local-variable-values '(cmake-ide-compile-command . "make -C /home/frerot/Documents/python/contact/fem/displacement_verification/build"))
-  (add-to-list 'safe-local-variable-values '(cmake-ide-compile-command . "make -j4 -C /home/frerot/Documents/akantu/build akantu"))
+  (add-to-list 'safe-local-variable-values '(cmake-ide-dir . "/home/frerot/Documents/tamaas"))
+  (add-to-list 'safe-local-variable-values '(compile-command . "make -C /home/frerot/Documents/python/contact/fem/displacement_verification/build"))
+  (add-to-list 'safe-local-variable-values '(compile-command . "make -j4 -C /home/frerot/Documents/akantu/build akantu"))
+  (add-to-list 'safe-local-variable-values '(compile-command . "scons -j4 -C /home/frerot/Documents/tamaas"))
 )
-
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.

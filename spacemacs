@@ -26,7 +26,7 @@ values."
             c-c++-enable-clang-support t)
      python
      ipython-notebook
-     latex
+     ;; latex
      xkcd
      spotify
      syntax-checking
@@ -243,8 +243,15 @@ layers configuration. You are free to put any user code."
 
   (define-key evil-normal-state-map (kbd "<f12>") 'spacemacs/cycle-spacemacs-theme)
 
+  ;; Compile shortcuts
+  (define-key evil-normal-state-map (kbd "<SPC>cc") 'compile)
+  (define-key evil-normal-state-map (kbd "<SPC>cC") 'helm-make-projectile)
+
   ;; Tell emacs to always follow symbolic links
   (setq-default vc-follow-symlinks t)
+
+  ;; Toggle indent guide
+  ;; (spacemacs/toggle-indent-guide-globally-on)
 
   ;; Add cpp-hh couple to projectile-find-other-file
   (with-eval-after-load "projectile"
@@ -267,7 +274,8 @@ layers configuration. You are free to put any user code."
   ;; C++ bindings
   (spacemacs/set-leader-keys-for-major-mode 'c++-mode "c" 'compile)
   (spacemacs/set-leader-keys-for-major-mode 'c++-mode "a" 'projectile-find-other-file)
-  (spacemacs/set-leader-keys-for-major-mode 'c++-mode "w" (lambda () (interactive)
+  (spacemacs/set-leader-keys-for-major-mode 'c++-mode "w" (lambda () "VSplit on other file"
+                                                            (interactive)
                                                             (evil-window-vsplit)
                                                             (projectile-find-other-file))
     )

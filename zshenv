@@ -31,3 +31,6 @@ export CONTACT=$HOME/Documents/python/contact
 export TAMAAS=$HOME/Documents/tamaas
 export PYTHONPATH=$PYTHONPATH:$TAMAAS/build/python
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$TAMAAS/build/src
+
+# Path for latex beamer metropolis theme
+export TEXINPUTS=$TEXINPUTS:$HOME/.local/repos/mtheme

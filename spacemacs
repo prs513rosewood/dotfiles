@@ -247,6 +247,13 @@ layers configuration. You are free to put any user code."
   (define-key evil-normal-state-map (kbd "<SPC>cc") 'compile)
   (define-key evil-normal-state-map (kbd "<SPC>cC") 'helm-make-projectile)
 
+  ;; New frame shortcut
+  (define-key evil-normal-state-map (kbd "C-t") (lambda () "New fullscreen frame"
+                                                  (interactive)
+                                                  (make-frame)
+                                                  (other-frame 1)
+                                                  (spacemacs/toggle-maximize-frame-on)))
+
   ;; Tell emacs to always follow symbolic links
   (setq-default vc-follow-symlinks t)
 

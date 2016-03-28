@@ -30,7 +30,7 @@ values."
      xkcd
      spotify
      syntax-checking
-     vim-powerline
+     ;; vim-powerline
      version-control
      org
      games
@@ -200,7 +200,7 @@ values."
    ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
    ;; derivatives. If set to `relative', also turns on relative line numbers.
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers 'relative
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
    dotspacemacs-smartparens-strict-mode nil
@@ -238,6 +238,9 @@ in `dotspacemacs/user-config'."
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+  ;; Toggle off minor modes in powerline (fixes separator bug)
+  (spacemacs/toggle-mode-line-minor-modes-off)
+
   ;; Bind C-n to :nohl
   (define-key evil-normal-state-map (kbd "C-n") 'evil-search-highlight-persist-remove-all)
 
@@ -274,6 +277,8 @@ layers configuration. You are free to put any user code."
   (setq org-agenda-files '("~/Dropbox/orgs"))
   (setq org-directory "~/Dropbox/orgs")
   (setq org-mobile-inbox-for-pull "~/Dropbox/orgs")
+  (org-babel-do-load-languages 'org-babel-load-languages
+                               '((python . t)))
 
   ;; (require 'rtags)
   (cmake-ide-setup)

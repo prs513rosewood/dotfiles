@@ -25,7 +25,7 @@ export PATH=$PATH:$HOME/Documents/blackdynamite/bin/
 export PYTHONPATH=$PYTHONPATH:$HOME/Documents/blackdynamite/python
 
 # Contact path
-export CONTACT=$HOME/Documents/python/contact
+export CONTACT=$HOME/Documents/contact
 
 # Add Tamaas to various paths
 export TAMAAS=$HOME/Documents/tamaas
@@ -34,3 +34,6 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$TAMAAS/build/src
 
 # Path for latex beamer metropolis theme
 export TEXINPUTS=$TEXINPUTS:$HOME/.local/repos/mtheme
+
+# Path for Score-P
+export PATH=$PATH:/opt/scorep/bin

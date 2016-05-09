@@ -34,6 +34,7 @@ values."
      version-control
      org
      games
+     extra-langs
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -272,6 +273,8 @@ layers configuration. You are free to put any user code."
   ;; Ein commands
   (spacemacs/set-leader-keys-for-major-mode
     'ein:notebook-multilang-mode "m" 'spacemacs/ipython-notebook-micro-state)
+  (spacemacs/set-leader-keys-for-major-mode
+    'ein:notebook-multilang-mode "c" 'ein:worksheet-execute-all-cell)
 
   ;; Org options
   (setq org-agenda-files '("~/Dropbox/orgs"))
@@ -302,3 +305,18 @@ layers configuration. You are free to put any user code."
 )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(safe-local-variable-values
+   (quote
+    ((cmake-ide-dir . "/home/frerot/Documents/akantu/build")))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))

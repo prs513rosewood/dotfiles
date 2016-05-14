@@ -18,7 +18,7 @@ Plugin 'vim-scripts/Conque-GDB'
 Plugin 'Valloric/YouCompleteMe.git'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'jamessan/vim-gnupg'
-Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
@@ -193,3 +193,8 @@ let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_by_filename = 1
 let g:ctrlp_match_window = 'bottom,order:ttb'
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/doxygen/*        " Linux/MacOSX
+
+" Powerline
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup

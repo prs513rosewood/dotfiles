@@ -12,3 +12,6 @@ build*
 
 # Projectile config files
 .projectile
+
+# Clang-complete flags files
+.clang_complete

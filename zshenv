@@ -37,3 +37,6 @@ export TEXINPUTS=$TEXINPUTS:$HOME/.local/repos/mtheme
 
 # Path for Score-P
 export PATH=$PATH:/opt/scorep/bin
+
+# Path for Cuda SDK
+export PATH=$PATH:/usr/local/cuda-7.5/bin

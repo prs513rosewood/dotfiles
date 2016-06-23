@@ -16,10 +16,6 @@ export AKANTU=$HOME/Documents/akantu
 export PYTHONPATH=$PYTHONPATH:$AKANTU/build/python
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$AKANTU/build/src
 
-# Add BEM to various paths
-export PYTHONPATH=$PYTHONPATH:$HOME/Documents/bem-python
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/Documents/bem-python
-
 # Add BlackDynamite to various paths
 export PATH=$PATH:$HOME/Documents/blackdynamite/bin/
 export PYTHONPATH=$PYTHONPATH:$HOME/Documents/blackdynamite/python

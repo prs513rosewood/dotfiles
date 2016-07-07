@@ -16,3 +16,7 @@ function tm_switch() {
     tm_remove_build
     ln -s "$TAMAAS/build-$type" $TAMAAS/build
 }
+
+function tm_test() {
+  PYTHONPATH=../python python $1
+}

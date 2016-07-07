@@ -30,6 +30,8 @@ alias ipnote='cd ~/Documents/python/notebooks/; jupyter notebook; cd -'
 alias shrc='source ~/.zshrc'
 alias open='gnome-open'
 alias tmux='TERM=xterm-256color tmux'
+alias tmc='scons -C $TAMAAS -j4'
+alias tmcc='tmc -c && tmc'
 
 # Activate bash-style completion
 autoload -U +X compinit && compinit

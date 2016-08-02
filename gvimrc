@@ -4,3 +4,4 @@ colorscheme solarized
 set lines=54 columns=104
 
 set guifont=Inconsolata\ for\ Powerline\ Medium\ 12
+set guioptions=

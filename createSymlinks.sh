@@ -1,5 +1,3 @@
-#!/usr/bin/zsh
-
 # file: createSymlinks.sh
 # author: Lucas Frérot
 

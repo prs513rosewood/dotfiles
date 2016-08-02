@@ -14,6 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 " user plugins
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/Conque-GDB'
 Plugin 'Valloric/YouCompleteMe.git'
 Plugin 'altercation/vim-colors-solarized'

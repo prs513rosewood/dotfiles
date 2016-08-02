@@ -6,6 +6,9 @@
 export PATH="$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 export MANPATH="$HOME/.local/share/man:"
 
+# Local stuff
+export PYTHONPATH=$PYTHONPATH:$HOME/.local/python
+
 # Editor
 export EDITOR="/usr/bin/vim"
 

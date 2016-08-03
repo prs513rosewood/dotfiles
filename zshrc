@@ -13,7 +13,7 @@ plugins=(git nyan chucknorris ubuntu common-aliases)
 source $ZSH/oh-my-zsh.sh
 
 # Loads powerline prompt
-POWERLINE_PROMPT=/usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh
+POWERLINE_PROMPT=/usr/lib64/python3.4/site-packages/powerline/bindings/zsh/powerline.zsh
 if [[ -f $POWERLINE_PROMPT && -o interactive ]]; then
   . $POWERLINE_PROMPT
 else
@@ -28,7 +28,7 @@ export LC_ALL=en_US.UTF-8
 alias gpg='gpg2'
 alias ipnote='cd ~/Documents/python/notebooks/; jupyter notebook; cd -'
 alias shrc='source ~/.zshrc'
-alias open='gnome-open'
+alias open='xdg-open'
 alias tmux='TERM=xterm-256color tmux'
 alias tmc='scons -C $TAMAAS -j4'
 alias tmcc='tmc -c && tmc'
@@ -41,9 +41,6 @@ autoload -U +X bashcompinit && bashcompinit
 for file (~/.local/scripts/*); do
   source $file
 done
-
-# Alias for thefuck
-eval $(thefuck --alias)
 
 # Add new line at the end of prompt
 export PROMPT="$PROMPT

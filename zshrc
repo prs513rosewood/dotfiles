@@ -32,6 +32,7 @@ alias open='xdg-open'
 alias tmux='TERM=xterm-256color tmux'
 alias tmc='scons -C $TAMAAS -j4'
 alias tmcc='tmc -c && tmc'
+alias tmcr='CXXFLAGS="-march=native -ftree-vectorize" tmc build_type=release'
 
 # Activate bash-style completion
 autoload -U +X compinit && compinit

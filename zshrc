@@ -7,7 +7,7 @@ export ZSH=~/.oh-my-zsh
 DEFAULT_USER=$(whoami)
 
 # Oh-My-Zsh plugins (look at $ZSH/plugins)
-plugins=(git nyan chucknorris ubuntu common-aliases)
+plugins=(git nyan chucknorris ubuntu common-aliases zsh-syntax-highlighting)
 
 # Load Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh

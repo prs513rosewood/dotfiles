@@ -126,7 +126,7 @@ nnoremap <F4> :e %:p:s,.hh$,.X123X,:s,.cc$,.hh,:s,.X123X$,.cc,<CR>
 nnoremap <leader>m :make -j4 -C ~/Documents/akantu/build<CR>
 nnoremap <leader>k :make -j4 -C ~/Documents/akantu/build akantu<CR>
 nnoremap <leader>l :cnext<CR>
-nnoremap <leader><leader> :make -j4 <CR>
+nnoremap <leader>cc :make -j4 <CR>
 
 " F5 is mapped to what I'm currently working on
 nnoremap <F5> :make -j4 -C ~/Documents/akantu/build/test/test_geometry<CR>

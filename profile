@@ -43,7 +43,7 @@ export CONTACT=$HOME/Documents/contact
 # Add Tamaas to various paths
 export TAMAAS=$HOME/Documents/tamaas
 export PYTHONPATH=$TAMAAS/build/python:$TAMAAS/gpu/build/python:$PYTHONPATH
-export LD_LIBRARY_PATH=$TAMAAS/build/src:$LD_LIBRARY_PATH
+#export LD_LIBRARY_PATH=$TAMAAS/build/src:$LD_LIBRARY_PATH
 
 # Path for latex beamer metropolis theme
 export TEXINPUTS=$HOME/.local/repos/mtheme:$TEXINPUTS
@@ -60,3 +60,6 @@ export PYTHONPATH=/usr/lib64/paraview-4.4/site-packages:/usr/lib64/paraview-4.4:
 # Path for spotify
 #export PATH=$HOME/.local/spotify-client:$PATH
 #export LD_LIBRARY_PATH=$HOME/.local/spotify-client:$LD_LIBRARY_PATH
+
+# Keychain
+eval `keychain --quiet --eval id_rsa`

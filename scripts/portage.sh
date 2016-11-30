@@ -8,3 +8,11 @@ function portage_backup() {
   fi
   cd -
 }
+
+function genup() {
+  if [[ ( $# -eq 2 ) && ( "$1" == "new" ) ]]; then
+    sudo emerge --sync && sudo emerge -uDN @world
+  else
+    sudo emerge --sync && sudo emerge -uD  @world
+  fi
+}

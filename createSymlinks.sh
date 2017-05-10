@@ -18,4 +18,15 @@ for dir in $directories; do
 done
 
 ln -sf `pwd`/vim $HOME/.vim
-ln -sf `pwd`/scripts $HOME/.local/scripts
+
+if [[ ! -e $HOME/.local/scripts ]]; then
+  ln -sf `pwd`/scripts $HOME/.local/scripts
+fi
+
+config=`ls config`
+
+for conf_dir in $config; do
+  if [[ ! -e $HOME/.config/$conf_dir ]]; then
+    ln -sf `pwd`/config/$conf_dir $HOME/.config/$conf_dir
+  fi
+done

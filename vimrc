@@ -16,7 +16,7 @@ Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/Conque-GDB'
-Plugin 'Valloric/YouCompleteMe.git'
+"Plugin 'Valloric/YouCompleteMe.git'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'jamessan/vim-gnupg'
 "Plugin 'vim-airline/vim-airline'
@@ -185,7 +185,7 @@ let g:airline#extensions#whitespace#enabled = 0
 
 " YouCompleteMe
 let g:ycm_collect_identifiers_from_tags_file = 1
-let g:ycm_extra_conf_globlist = ["~/Documents/akantu/.ycm_extra_conf.py"]
+"let g:ycm_extra_conf_globlist = ["~/Documents/akantu/.ycm_extra_conf.py"]
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_filetype_blacklist = {'text':1, 'tex':1}
 

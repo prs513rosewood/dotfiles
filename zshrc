@@ -28,7 +28,7 @@ export LC_ALL=en_US.UTF-8
 alias gpg='gpg2'
 alias ipnote='cd ~/Documents/python/notebooks/; jupyter notebook; cd -'
 alias shrc='source ~/.zshrc'
-alias open='xdg-open'
+open() { xdg-open $1 > /dev/null 2>&1 }
 alias tmux='TERM=xterm-256color tmux'
 alias tmc='scons -C $TAMAAS -j4'
 alias tmcc='tmc -c && tmc'

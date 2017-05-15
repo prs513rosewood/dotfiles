@@ -174,7 +174,10 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Shift+z exec --no-startup-id /home/frerot/.local/repos/i3lock-blur/lock.sh
 
 # Gnome settings
-exec /usr/libexec/gnome-settings-daemon
+exec --no-startup-id /usr/libexec/gnome-settings-daemon
+
+# Network-Manager applet
+exec --no-startup-id nm-applet
 
 # Desktop wallpaper
 exec --no-startup-id feh --bg-fill "$HOME/Pictures/Link to home_by_sergey_lesiuk-d6700ip.png"
@@ -188,6 +191,8 @@ for_window [class="^.*"] border pixel 3
 # Make windows of python scripts float
 for_window [class=".py$" instance=".py$"] floating enable
 for_window [class=".py$" instance=".py$"] border normal
+for_window [class="Back Up"] floating enable
+for_window [class="Back Up"] border normal
 
 # Pretty colors
 set $main "#DE935F"

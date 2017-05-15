@@ -16,6 +16,14 @@ fi
 export PATH
 unset ROOTPATH
 
+# Ensure dbus is either already running, or safely start it
+if [[ -z "${DBUS_SESSION_BUS_ADDRESS}" ]]; then
+    eval $(dbus-launch --sh-syntax --exit-with-session)
+fi
+
+# Make the keyring daemon ready to communicate with nm-applet
+export $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+
 # Path
 export PATH="$HOME/.local/bin:${PATH}"
 export MANPATH="$HOME/.local/share/man:${MANPATH}"
@@ -62,4 +70,4 @@ export PYTHONPATH=/usr/lib64/paraview-4.4/site-packages:/usr/lib64/paraview-4.4:
 #export LD_LIBRARY_PATH=$HOME/.local/spotify-client:$LD_LIBRARY_PATH
 
 # Keychain
-eval `keychain --quiet --eval id_rsa`
+#eval `keychain --quiet --eval id_rsa`

@@ -10,9 +10,5 @@ function portage_backup() {
 }
 
 function genup() {
-  if [[ ( $# -eq 2 ) && ( "$1" == "new" ) ]]; then
-    sudo emerge --sync && sudo emerge -uDN --with-bdeps=y @world
-  else
-    sudo emerge --sync && sudo emerge -uD  @world
-  fi
+  sudo emerge --sync && sudo emerge -uDN --with-bdeps=y @world
 }

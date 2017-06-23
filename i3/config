@@ -149,6 +149,18 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+mode "screen" {
+  bindsym 1 exec "xrandr --output DP1-1 --auto && xrandr --output DP1-2 --auto --right-of DP1-1 && xrandr --output eDP1 --off"
+  bindsym 2 exec "xrandr --output DP1-1 --off && xrandr --output DP1-2 --off && xrandr --output eDP1 --auto"
+  bindsym 3 exec "xrandr --output HDMI1 --auto --same-as eDP1"
+  bindsym r exec "xrandr --output DP1-2 --off && sleep 5 && xrandr --output DP1-2 --auto --right-of DP1-1 && i3 restart"
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
+bindsym $mod+Ctrl+s mode "screen"
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 # bar {
@@ -183,10 +195,11 @@ exec --no-startup-id nm-applet
 exec --no-startup-id nextcloud
 
 # Desktop wallpaper
-exec --no-startup-id feh --bg-fill "$HOME/Pictures/Link to home_by_sergey_lesiuk-d6700ip.png"
+exec --no-startup-id feh --bg-fill "$HOME/Pictures/wallpaper.png"
 
-# Workspace 2 on other monitor
+# Workspace 2,4 on other monitor
 workspace 2 output DP1-2
+workspace 4 output DP1-2
 
 # diables window borders
 for_window [class="^.*"] border pixel 3
@@ -194,8 +207,12 @@ for_window [class="^.*"] border pixel 3
 # Make windows of python scripts float
 for_window [class=".py$" instance=".py$"] floating enable
 for_window [class=".py$" instance=".py$"] border normal
-for_window [class="Back Up"] floating enable
-for_window [class="Back Up"] border normal
+for_window [class="(?i)deja-dup"] floating enable
+for_window [class="(?i)deja-dup"] border normal
+
+# Assign windows to workspaces
+assign [class="Thunderbird|Liferea"] 2
+assign [class="(?i)spotify"] 4
 
 # Pretty colors
 set $main "#DE935F"

@@ -28,9 +28,6 @@ export $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export PATH="$HOME/.local/bin:${PATH}"
 export MANPATH="$HOME/.local/share/man:${MANPATH}"
 
-# Local stuff
-export PYTHONPATH=$HOME/.local/python:$PYTHONPATH
-
 # Editor
 export EDITOR="/usr/bin/vim"
 
@@ -42,8 +39,8 @@ export PYTHONPATH=$AKANTU/build/python:$PYTHONPATH
 export LD_LIBRARY_PATH=$AKANTU/build/src:$LD_LIBRARY_PATH
 
 # Add BlackDynamite to various paths
-export PATH=$HOME/Documents/blackdynamite/bin/:$PATH
-export PYTHONPATH=$HOME/Documents/blackdynamite/python:$PYTHONPATH
+#export PATH=$HOME/Documents/blackdynamite/bin/:$PATH
+#export PYTHONPATH=$HOME/Documents/blackdynamite/python:$PYTHONPATH
 
 # Contact path
 export CONTACT=$HOME/Documents/contact
@@ -64,6 +61,12 @@ export PATH=/opt/cuda/bin:$PATH
 
 # Paraview python bindings
 export PYTHONPATH=/usr/lib64/paraview-4.4/site-packages:/usr/lib64/paraview-4.4:$PYTHONPATH
+
+# PostgreSQL binaries path
+export PATH=/usr/lib64/postgresql-9.6/bin:$PATH
+
+# Zotero
+export PATH=$PATH:$HOME/Documents/miscellaneous/Zotero_linux-x86_64/
 
 # Path for spotify
 #export PATH=$HOME/.local/spotify-client:$PATH

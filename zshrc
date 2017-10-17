@@ -13,7 +13,7 @@ plugins=(git nyan chucknorris ubuntu common-aliases zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Loads powerline prompt
-POWERLINE_PROMPT=/usr/lib64/python3.4/site-packages/powerline/bindings/zsh/powerline.zsh
+POWERLINE_PROMPT=$HOME/.local/lib64/python3.4/site-packages/powerline/bindings/zsh/powerline.zsh
 if [[ -f $POWERLINE_PROMPT && -o interactive ]]; then
   . $POWERLINE_PROMPT
 else
@@ -46,3 +46,6 @@ done
 # Add new line at the end of prompt
 export PROMPT="$PROMPT
 %# "
+
+# Set colortheme from wal
+#(wal -tr &)

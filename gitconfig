@@ -7,5 +7,3 @@
 	excludesfile = ~/.gitignore_global
 [alias]
 	st = status
-[commit]
-	gpgSign = true

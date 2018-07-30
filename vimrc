@@ -16,10 +16,8 @@ Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/Conque-GDB'
-"Plugin 'Valloric/YouCompleteMe.git'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'jamessan/vim-gnupg'
-"Plugin 'vim-airline/vim-airline'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
@@ -122,18 +120,6 @@ set undodir=~/.vim/undodir
 " Switching between header and implementation
 nnoremap <F4> :e %:p:s,.hh$,.X123X,:s,.cc$,.hh,:s,.X123X$,.cc,<CR>
 
-" Compiling
-nnoremap <leader>m :make -j4 -C ~/Documents/akantu/build<CR>
-nnoremap <leader>k :make -j4 -C ~/Documents/akantu/build akantu<CR>
-nnoremap <leader>l :cnext<CR>
-nnoremap <leader>cc :make -j4 <CR>
-
-" F5 is mapped to what I'm currently working on
-nnoremap <F5> :make -j4 -C ~/Documents/akantu/build/test/test_geometry<CR>
-
-" F6 is mapped to 'copy entire file in system clipboard'
-nnoremap <F6> gg"+yG''
-
 " Mapping to replace . with ->
 nnoremap <leader>a f.i-><del><esc>
 
@@ -179,23 +165,8 @@ autocmd BufRead *.geo set filetype=c
 " Set linebreak on for text files
 autocmd BufRead *.tex,*.txt setlocal linebreak
 
-" vim-airline
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#whitespace#enabled = 0
-
-" YouCompleteMe
-let g:ycm_collect_identifiers_from_tags_file = 1
-"let g:ycm_extra_conf_globlist = ["~/Documents/akantu/.ycm_extra_conf.py"]
-let g:ycm_show_diagnostics_ui = 0
-let g:ycm_filetype_blacklist = {'text':1, 'tex':1}
-
 " CtrlP
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_by_filename = 1
 let g:ctrlp_match_window = 'bottom,order:ttb'
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/doxygen/*        " Linux/MacOSX
-
-" Powerline
-"python3 from powerline.vim import setup as powerline_setup
-"python3 powerline_setup()
-"python3 del powerline_setup

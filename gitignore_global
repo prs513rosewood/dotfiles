@@ -15,3 +15,6 @@ build*
 
 # Clang-complete flags files
 .clang_complete
+
+# Compilation database JSON
+compile_commands.*

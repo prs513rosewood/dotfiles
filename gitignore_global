@@ -17,4 +17,4 @@ build*
 .clang_complete
 
 # Compilation database JSON
-compile_commands.*
+compile_commands*.*

@@ -1,7 +1,6 @@
 " Pretty colors
-colorscheme solarized
+colorscheme evening
 " Set the size of the window
 set lines=54 columns=104
 
-set guifont=Inconsolata\ for\ Powerline\ Medium\ 12
 set guioptions=

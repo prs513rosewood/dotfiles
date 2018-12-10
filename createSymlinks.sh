@@ -9,15 +9,13 @@ for file in *; do
     fi
 done
 
-directories=($HOME/.vim $HOME/.local/scripts)
+directories=($HOME/.local/scripts)
 
 for dir in $directories; do
   if [[ -h $dir ]]; then
     rm -f $dir
   fi
 done
-
-ln -sf `pwd`/vim $HOME/.vim
 
 if [[ ! -e $HOME/.local/scripts ]]; then
   ln -sf `pwd`/scripts $HOME/.local/scripts

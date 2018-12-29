@@ -1,5 +1,16 @@
+#!/usr/bin/env bash
 # file: createSymlinks.sh
 # author: Lucas Frérot
+
+link_dir_content() {
+  dir=$1
+  content=$(ls $dir)
+  for file in $content; do
+    if [[ ! -e $HOME/.$dir/$file ]]; then
+      ln -sf $PWD/$dir/$file $HOME/.$dir/$file
+    fi
+  done
+}
 
 for file in *; do
     if [[ $file != `basename $0` ]]; then
@@ -21,10 +32,5 @@ if [[ ! -e $HOME/.local/scripts ]]; then
   ln -sf `pwd`/scripts $HOME/.local/scripts
 fi
 
-config=`ls config`
-
-for conf_dir in $config; do
-  if [[ ! -e $HOME/.config/$conf_dir ]]; then
-    ln -sf `pwd`/config/$conf_dir $HOME/.config/$conf_dir
-  fi
-done
+link_dir_content config
+link_dir_content ssh

@@ -2,7 +2,7 @@ Host vlgpi
   HostName raspberrypi
   User pi
 
-Host localpi
+Host morgespi
   HostName 192.168.178.36
   User pi
 

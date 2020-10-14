@@ -1,0 +1,9 @@
+[submodule ".vim"]
+	path = .vim
+	url = git@github.com:prs513rosewood/dotvim.git
+[submodule ".emacs.d"]
+	path = .emacs.d
+	url = git@github.com:prs513rosewood/dotemacs.git
+[submodule "config/fish"]
+	path = .config/fish
+	url = git@github.com:prs513rosewood/config.fish.git

@@ -1,8 +1,8 @@
 [submodule ".vim"]
-	path = .vim
+	path = dot-vim
 	url = https://github.com/prs513rosewood/dotvim.git
 [submodule ".emacs.d"]
-	path = .emacs.d
+	path = dot-emacs.d
 	url = https://github.com/prs513rosewood/dotemacs.git
 [submodule "config/fish"]
 	path = .config/fish

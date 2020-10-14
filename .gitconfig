@@ -9,3 +9,5 @@
 	st = status
 [commit]
         gpgSign = true
+[pull]
+	rebase = false

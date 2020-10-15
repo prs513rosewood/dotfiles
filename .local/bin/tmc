@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+bear -a scons -j4 $@
+sed -i -e 's/build-\w\+\///g;s/OMP/TBB/g' compile_commands.json

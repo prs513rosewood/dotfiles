@@ -1,4 +1,4 @@
 #!/bin/sh
 
 git submodule update --init --recursive
-stow -t $HOME --ignore=.gitmodules .
+stow -t $HOME --ignore="(\.gitmodules|stow)" .
